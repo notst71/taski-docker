@@ -31,3 +31,8 @@ jobs:
       # Вызываем ruff и указываем ему,
       # что нужно проверить файлы только в папке backend/
       run: python -m ruff check backend/
+    - name: Lint with ruff and run django tests
+      run: |
+        python -m ruff check backend/
+        cd backend/
+        python manage.py test
